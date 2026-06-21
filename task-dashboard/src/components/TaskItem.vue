@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { useTaskStore } from '../stores/taskStore' // الخروج خطوة للوراء للوصول لمجلد stores
+import { useTaskStore } from '../stores/taskStore' 
 
 export default {
   name: 'TaskItem',

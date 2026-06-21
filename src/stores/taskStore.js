@@ -14,14 +14,15 @@ export const useTaskStore = defineStore('taskStore', {
   actions: {
     fetchTasks() {
       this.loading = true
+      // جلب البيانات من ذاكرة المتصفح LocalStorage إذا كانت موجودة
       const savedTasks = localStorage.getItem('my_tasks')
       if (savedTasks) {
         this.tasks = JSON.parse(savedTasks)
       } else {
-    
+        // مهام افتراضية تظهر لأول مرة فقط
         this.tasks = [
-          { id: 1, title: 'Learn Vue 3 & SPA Fundamentals', isCompleted: true },
-          { id: 2, title: 'Master Pinia State Management', isCompleted: false }
+          { id: 1, title: 'تعلم أساسيات Vue 3', isCompleted: true },
+          { id: 2, title: 'تطبيق إدارة الحالة باستخدام Pinia', isCompleted: false }
         ]
       }
       this.loading = false
